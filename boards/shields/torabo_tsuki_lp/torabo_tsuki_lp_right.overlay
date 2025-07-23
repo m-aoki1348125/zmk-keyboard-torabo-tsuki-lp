@@ -1,4 +1,16 @@
 #include "torabo_tsuki_lp.dtsi"
+#include <input/processors.dtsi>
+
+/ {
+    trackball_scaler: trackball_scaler {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <0>;
+        x-multiplier = <1>;
+        y-multiplier = <1>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_X INPUT_REL_Y>;
+    };
+};
 
 &size_s_transform {
     col-offset = <7>;
