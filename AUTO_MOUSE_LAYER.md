@@ -125,7 +125,7 @@ trackball_listener: trackball_listener {
     input-processors = <&trackball_auto_mouse_layer>;
 };
 
-// Trackball device with axis inversion
+// Trackball device configuration
 trackball: trackball@0 {
     status = "okay";
     compatible = "pixart,paw3222";
@@ -133,8 +133,6 @@ trackball: trackball@0 {
     spi-max-frequency = <2000000>;
     irq-gpios = <&gpio0 19 GPIO_ACTIVE_LOW>;
     power-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H1)>;
-    invert-x;                       // Invert X axis movement
-    invert-y;                       // Invert Y axis movement
 };
 ```
 
@@ -169,15 +167,12 @@ You can adjust the following parameters in the devicetree:
 - `timeout-ms`: How long to wait before returning to default layer (currently 1200ms / 1.2s)
 - `require-prior-idle-ms`: Minimum idle time before auto-activation (currently 100ms)
 - `layer`: Which layer to activate (currently set to layer 1 for mouse operations)
-- Trackball sensitivity: Adjust `invert-x`, `invert-y` properties on trackball device
 - Layer assignments: Modify layer numbers for mouse (1) and scroll (4) layers as needed
 
 ## Trackball Orientation
-The implementation includes axis adjustments in the trackball device configuration:
-- `invert-x`: Inverts horizontal movement direction  
-- `invert-y`: Inverts vertical movement direction
+The trackball uses default orientation as configured by the PAW3222 driver. If movement direction feels incorrect, axis inversion can be handled through software mapping or physical trackball ball placement adjustment.
 
-Adjust these settings in the trackball device section of `torabo_tsuki_lp.dtsi` if trackball movement feels incorrect. Remove these properties if default orientation is preferred.
+For software-level axis adjustment, you may need to implement custom input processing or modify the keymap bindings to achieve the desired movement direction.
 
 ## Troubleshooting
 
