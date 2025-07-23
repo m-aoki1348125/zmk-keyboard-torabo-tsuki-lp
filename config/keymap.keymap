@@ -22,7 +22,6 @@
         bt_clear {
             bindings = <&bt BT_CLR>;
             key-positions = <28 29>;
-            layers = <2>;
         };
 
         // Mouse layer combos for quick actions
@@ -30,31 +29,27 @@
         mouse_copy {
             bindings = <&kp LC(C)>;
             key-positions = <27 28>;
-            layers = <1>;
         };
 
         mouse_paste {
             bindings = <&kp LC(V)>;
             key-positions = <28 29>;
-            layers = <1>;
         };
 
         mouse_undo {
             bindings = <&kp LC(Z)>;
             key-positions = <26 27>;
-            layers = <1>;
         };
 
         mouse_redo {
             bindings = <&kp LC(Y)>;
             key-positions = <29 30>;
-            layers = <1>;
         };
 
         // Test: Simple mouse layer toggle
 
         mouse_layer_toggle {
-            bindings = <&tog 1>;
+            bindings = <&tog 0>;
             key-positions = <25 26>;
             layers = <0>;
         };
@@ -62,7 +57,7 @@
         // Test: Direct mouse layer access
 
         mouse_layer_direct {
-            bindings = <&to 1>;
+            bindings = <&to 0>;
             key-positions = <26 27>;
             layers = <0>;
         };
@@ -70,7 +65,7 @@
         // Direct scroll layer access
 
         scroll_layer_direct {
-            bindings = <&to 2>;
+            bindings = <&to 0>;
             key-positions = <24 25>;
             layers = <0>;
         };
@@ -78,17 +73,16 @@
         // Quick layer switch to scroll layer
 
         scroll_layer_toggle {
-            bindings = <&tog 2>;
+            bindings = <&tog 0>;
             key-positions = <32 33>;
-            layers = <0 1 3 4 5>;
+            layers = <0>;
         };
 
         // Switch from mouse layer to scroll layer
 
         mouse_to_scroll {
-            bindings = <&to 2>;
+            bindings = <&to 0>;
             key-positions = <30 31>;
-            layers = <1>;
         };
 
         // Enhanced scroll operations in scroll layer
@@ -96,13 +90,11 @@
         fast_scroll_up {
             bindings = <&scroll_tp>;
             key-positions = <18 19>;
-            layers = <4>;
         };
 
         precision_zoom {
             bindings = <&kp LC(N0)>;
             key-positions = <16 17>;
-            layers = <4>;
         };
     };
 
@@ -152,59 +144,59 @@
             bindings = <
 &none  &none         &none         &none  &none  &none                                                          &none        &none     &none      &none     &none                 &none
 &none  &kp Q         &kp W         &kp E  &kp R  &kp T                                                          &kp Y        &kp U     &kp I      &kp O     &kp P                 &none
+&none  &kp A         &kp S         &kp D  &kp F  &kp G             &none                 &none                  &kp H        &kp J     &kp K      &kp L     &kp MINUS             &none
+&none  &kp Z         &kp X         &kp C  &kp V  &kp B             &kp ESCAPE            &kp DEL                &kp N        &kp M     &kp COMMA  &kp DOT   &mt RIGHT_SHIFT FSLH  &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT  &none  &none  &lt 3 LANGUAGE_2  &mt LEFT_SHIFT SPACE  &mt RSHIFT LANGUAGE_2  &lt 0 ENTER  &kp BSPC  &kp RALT   &kp RGUI  &kp RCTRL             &none
+            >;
+        };
+
+        mouse {
+            bindings = <
+&none  &none         &none               &none     &none                &none                                                          &none        &none     &none      &none     &none                 &none
+&none  &kp Q         &kp LA(LEFT_ARROW)  &mkp MB3  &kp LA(RIGHT_ARROW)  &kp T                                                          &kp Y        &kp U     &kp I      &kp O     &kp P                 &none
+&none  &kp A         &mo 2               &mkp MB2  &mkp MB1             &kp G             &none                 &none                  &kp H        &kp J     &kp K      &kp L     &kp SEMI              &none
+&none  &kp Z         &kp X               &kp C     &kp V                &kp B             &kp ESCAPE            &kp DEL                &kp N        &kp M     &kp COMMA  &kp DOT   &mt RIGHT_SHIFT FSLH  &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT        &none     &none                &lt 0 LANGUAGE_2  &mt LEFT_SHIFT SPACE  &mt RSHIFT LANGUAGE_2  &lt 0 ENTER  &kp BSPC  &kp RALT   &kp RGUI  &kp RCTRL             &none
+            >;
+        };
+
+        scroll {
+            bindings = <
+&none  &none         &none         &none  &none  &none                                                          &none        &none     &none      &none     &none                 &none
+&none  &kp Q         &kp W         &kp E  &kp R  &kp T                                                          &kp Y        &kp U     &kp I      &kp O     &kp P                 &none
 &none  &kp A         &kp S         &kp D  &kp F  &kp G             &none                 &none                  &kp H        &kp J     &kp K      &kp L     &kp SEMI              &none
 &none  &kp Z         &kp X         &kp C  &kp V  &kp B             &kp ESCAPE            &kp DEL                &kp N        &kp M     &kp COMMA  &kp DOT   &mt RIGHT_SHIFT FSLH  &none
-&none  &kp LEFT_GUI  &kp LEFT_ALT  &none  &none  &lt 3 LANGUAGE_2  &mt LEFT_SHIFT SPACE  &mt RSHIFT LANGUAGE_2  &lt 4 ENTER  &kp BSPC  &kp RALT   &kp RGUI  &kp RCTRL             &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT  &none  &none  &lt 0 LANGUAGE_2  &mt LEFT_SHIFT SPACE  &mt RSHIFT LANGUAGE_2  &lt 0 ENTER  &kp BSPC  &kp RALT   &kp RGUI  &kp RCTRL             &none
             >;
         };
 
-        mouse_layer {
+        num {
             bindings = <
-&to 0      &kp ESC    &kp K_BACK  &kp K_FORWARD  &kp C_AC_REFRESH  &kp C_AC_ZOOM_IN                        &kp PG_UP  &kp UP     &kp PG_DN   &kp C_VOL_UP  &kp C_MUTE    &kp C_VOL_DN
-&kp TAB    &kp LC(Z)  &kp LC(X)   &kp LC(C)      &kp LC(V)         &kp LC(Y)                               &kp HOME   &kp LEFT   &kp DOWN    &kp RIGHT     &kp END       &kp DEL
-&kp LCTRL  &kp LGUI   &kp LALT    &kp LSHFT      &mkp LCLK         &mkp RCLK         &mkp LCLK  &mkp RCLK  &mkp LCLK  &mkp RCLK  &mkp MCLK   &kp RSHFT     &kp RALT      &kp RGUI
-&tog 1     &kp LC(A)  &kp LC(S)   &kp LC(F)      &kp LC(G)         &kp LC(H)         &kp SPACE  &kp RET    &to 2      &mo 2      &kp LC(F4)  &kp RCTRL     &kp LC(SEMI)  &kp LC(SQT)
-&trans     &trans     &trans      &trans         &mkp LCLK         &mkp RCLK         &mkp LCLK  &mkp RCLK  &mkp MCLK  &trans     &trans      &trans        &trans        &trans
+&none  &none               &none               &none             &none                &none                                                          &none        &none     &none     &none     &none                 &none
+&none  &kp Q               &kp W               &kp UP_ARROW      &kp R                &kp T                                                          &kp ASTRK    &kp N7    &kp N8    &kp N9    &kp PLUS              &none
+&none  &kp HOME            &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW      &kp END           &none                 &none                  &kp SLASH    &kp N4    &kp N5    &kp N6    &kp MINUS             &none
+&none  &kp LG(DOWN_ARROW)  &kp LG(LEFT_ARROW)  &kp LG(UP_ARROW)  &kp LG(RIGHT_ARROW)  &kp B             &kp ESCAPE            &kp DEL                &kp N0       &kp N1    &kp N2    &kp N3    &mt RIGHT_SHIFT FSLH  &none
+&none  &kp LEFT_GUI        &kp LEFT_ALT        &none             &none                &lt 0 LANGUAGE_2  &mt LEFT_SHIFT SPACE  &mt RSHIFT LANGUAGE_2  &lt 0 ENTER  &kp BSPC  &kp RALT  &kp RGUI  &kp RCTRL             &none
             >;
         };
 
-        scroll_layer {
+        symbol {
             bindings = <
-&to 0      &kp ESC    &kp K_BACK  &kp K_FORWARD  &kp C_AC_REFRESH  &kp C_AC_ZOOM_IN                                   &kp PG_UP       &kp UP           &kp PG_DN     &kp C_VOL_UP  &kp C_MUTE    &kp C_VOL_DN
-&kp TAB    &kp LC(Z)  &kp LC(X)   &kp LC(C)      &kp LC(V)         &kp LC(Y)                                          &kp HOME        &kp LEFT         &kp DOWN      &kp RIGHT     &kp END       &kp DEL
-&kp LCTRL  &kp LGUI   &kp LALT    &kp LSHFT      &msc SCRL_LEFT    &msc SCRL_RIGHT   &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_UP  &kp RSHFT     &kp RALT      &kp RGUI
-&tog 2     &kp LC(A)  &kp LC(S)   &kp LC(F)      &msc SCRL_UP      &msc SCRL_DOWN    &kp SPACE       &kp RET          &msc SCRL_UP    &msc SCRL_DOWN   &kp LC(F4)    &kp RCTRL     &kp LC(SEMI)  &kp LC(SQT)
-&trans     &trans     &trans      &trans         &msc SCRL_UP      &msc SCRL_DOWN    &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_UP    &msc SCRL_DOWN   &trans        &trans        &trans        &trans
+&none  &none         &none         &none  &none  &none                                                          &none        &none     &none      &none     &none                 &none
+&none  &kp Q         &kp W         &kp E  &kp R  &kp T                                                          &kp Y        &kp U     &kp I      &kp O     &kp P                 &none
+&none  &kp A         &kp S         &kp D  &kp F  &kp G             &none                 &none                  &kp H        &kp J     &kp K      &kp L     &kp SEMI              &none
+&none  &kp Z         &kp X         &kp C  &kp V  &kp B             &kp ESCAPE            &kp DEL                &kp N        &kp M     &kp COMMA  &kp DOT   &mt RIGHT_SHIFT FSLH  &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT  &none  &none  &lt 0 LANGUAGE_2  &mt LEFT_SHIFT SPACE  &mt RSHIFT LANGUAGE_2  &lt 0 ENTER  &kp BSPC  &kp RALT   &kp RGUI  &kp RCTRL             &none
             >;
         };
 
-        symbols_numbers_layer {
+        layer_5 {
             bindings = <
-&trans  &trans            &trans            &trans      &trans      &trans                      &trans          &trans         &trans            &trans             &trans         &trans
-&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)                  &kp LS(N6)      &kp LS(N7)     &kp LS(N8)        &kp LS(N9)         &kp LS(N0)     &trans
-&trans  &kp N1            &kp N2            &kp N3      &kp N4      &kp N5      &trans  &trans  &kp LEFT_BRACE  &kp MINUS      &kp EQUAL         &kp RIGHT_BRACE    &kp COLON      &trans
-&trans  &kp N6            &kp N7            &kp N8      &kp N9      &kp N0      &trans  &trans  &kp LS(MINUS)   &kp LS(EQUAL)  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans
-&trans  &trans            &trans            &trans      &trans      &trans      &trans  &trans  &kp TAB         &kp DEL        &trans            &trans             &trans         &trans
-            >;
-        };
-
-        function_layer {
-            bindings = <
-&trans  &trans   &trans   &trans        &trans        &trans                      &trans            &trans     &trans         &trans     &trans      &trans
-&trans  &kp F1   &kp F2   &kp F3        &kp F4        &kp F5                      &kp HOME          &kp PG_UP  &kp PAGE_DOWN  &kp END    &kp ESCAPE  &trans
-&trans  &kp F6   &kp F7   &kp F8        &kp F9        &kp F10     &trans  &trans  &kp LEFT          &kp DOWN   &kp UP_ARROW   &kp RIGHT  &kp TAB     &trans
-&trans  &kp F11  &kp F12  &out OUT_USB  &out OUT_BLE  &bt BT_NXT  &trans  &trans  &kp SINGLE_QUOTE  &kp DQT    &kp GRAVE      &kp TILDE  &kp PIPE    &trans
-&trans  &trans   &trans   &trans        &kp DELETE    &kp TAB     &trans  &trans  &trans            &trans     &trans         &trans     &trans      &trans
-            >;
-        };
-
-        keyboard_nav_layer {
-            bindings = <
-&to 0      &kp C_AC_ZOOM_OUT  &kp C_AC_ZOOM_IN  &kp C_AC_REFRESH  &kp LC(F5)    &kp F5                             &kp PG_UP  &kp PG_UP  &kp PG_UP   &kp C_VOL_UP  &kp C_VOL_DN  &to 0
-&kp LC(T)  &kp LC(W)          &kp LC(LS(T))     &kp LC(R)         &kp LC(L)     &kp LC(K)                          &kp HOME   &kp UP     &kp PG_DN   &kp END       &kp LC(F)     &kp DEL
-&kp LCTRL  &kp LGUI           &kp LALT          &kp LSHFT         &kp LC(A)     &kp LC(E)    &kp RET  &kp SPACE    &kp LEFT   &kp DOWN   &kp UP      &kp RIGHT     &kp RALT      &kp RGUI
-&tog 5     &kp LC(MINUS)      &kp LC(EQUAL)     &kp LC(N0)        &kp LS(HOME)  &kp LS(END)  &kp TAB  &kp LS(TAB)  &kp PG_DN  &kp PG_DN  &kp LC(F4)  &kp RCTRL     &mo 3         &mo 4
-&trans     &trans             &trans            &trans            &kp LC(A)     &kp LC(E)    &kp RET  &kp SPACE    &kp DEL    &kp BSPC   &trans      &trans        &trans        &trans
+&none  &none         &none         &none  &none  &none                                                          &none        &none     &none      &none     &none                 &none
+&none  &kp Q         &kp W         &kp E  &kp R  &kp T                                                          &kp Y        &kp U     &kp I      &kp O     &kp P                 &none
+&none  &kp A         &kp S         &kp D  &kp F  &kp G             &none                 &none                  &kp H        &kp J     &kp K      &kp L     &kp SEMI              &none
+&none  &kp Z         &kp X         &kp C  &kp V  &kp B             &kp ESCAPE            &kp DEL                &kp N        &kp M     &kp COMMA  &kp DOT   &mt RIGHT_SHIFT FSLH  &none
+&none  &kp LEFT_GUI  &kp LEFT_ALT  &none  &none  &lt 0 LANGUAGE_2  &mt LEFT_SHIFT SPACE  &mt RSHIFT LANGUAGE_2  &lt 0 ENTER  &kp BSPC  &kp RALT   &kp RGUI  &kp RCTRL             &none
             >;
         };
     };
