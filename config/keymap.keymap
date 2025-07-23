@@ -131,11 +131,11 @@
 
         mouse_layer {
             bindings = <
-&to 0     &kp ESC  &trans   &trans   &trans   &trans                     &trans      &trans      &trans      &trans      &kp C_MUTE  &trans
-&trans    &trans   &trans   &trans   &trans   &trans                     &trans      &trans      &trans      &trans      &trans      &trans
-&trans    &trans   &trans   &trans   &mkp LCLK &mkp RCLK  &mkp LCLK &mkp RCLK &mkp LCLK   &mkp RCLK   &mkp MCLK   &trans      &trans      &trans
-&tog 1    &trans   &trans   &trans   &trans   &trans     &trans    &trans    &msc SCRL_UP &msc SCRL_DOWN &trans   &trans      &trans      &trans
-&trans    &trans   &trans   &trans   &mkp LCLK &mkp RCLK  &mkp LCLK &mkp RCLK &mkp MCLK   &trans      &trans      &trans      &trans      &trans
+&to 0     &kp ESC    &kp K_BACK  &kp K_FORWARD &kp C_AC_REFRESH &kp C_AC_ZOOM_IN                     &kp PG_UP    &kp UP      &kp PG_DN    &kp C_VOL_UP   &kp C_MUTE    &kp C_VOL_DN
+&kp TAB   &kp LC(Z)  &kp LC(X)   &kp LC(C)     &kp LC(V)        &kp LC(Y)                            &kp HOME     &kp LEFT    &kp DOWN     &kp RIGHT      &kp END       &kp DEL
+&kp LCTRL &kp LGUI   &kp LALT    &kp LSHFT     &mkp LCLK        &mkp RCLK     &mkp LCLK    &mkp RCLK  &mkp LCLK    &mkp RCLK   &mkp MCLK    &kp RSHFT      &kp RALT      &kp RGUI
+&tog 1    &kp LC(A)  &kp LC(S)   &kp LC(F)     &kp LC(G)        &kp LC(H)     &kp SPACE    &kp RET    &msc SCRL_UP &msc SCRL_DOWN &kp LC(F4) &kp RCTRL      &kp LC(SEMI)  &kp LC(SQT)
+&trans    &trans     &trans      &trans        &mkp LCLK        &mkp RCLK     &mkp LCLK    &mkp RCLK  &mkp MCLK    &trans      &trans       &trans         &trans        &trans
             >;
         };
 
@@ -159,13 +159,13 @@
             >;
         };
 
-        scroll_layer {
+        keyboard_nav_layer {
             bindings = <
-&to 0        &kp C_AC_ZOOM_OUT &kp C_AC_ZOOM_IN  &kp C_AC_REFRESH   &kp LC(F5)        &kp F5                           &msc SCRL_UP    &msc SCRL_UP    &msc SCRL_UP    &msc SCRL_UP    &msc SCRL_UP    &to 0
-&kp LC(T)    &kp LC(W)         &kp LC(LS(T))     &kp LC(R)          &kp LC(L)         &kp LC(K)                        &msc SCRL_LEFT  &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_RIGHT &msc SCRL_RIGHT &kp LC(F)
-&kp LCTRL    &kp LGUI          &kp LALT          &kp LSHFT          &msc SCRL_UP      &msc SCRL_DOWN   &mkp LCLK &mkp RCLK &msc SCRL_UP    &msc SCRL_DOWN  &mkp MCLK       &kp RSHFT       &kp RALT        &kp RGUI
-&tog 4       &kp LC(MINUS)     &kp LC(EQUAL)     &kp LC(N0)         &msc SCRL_LEFT    &msc SCRL_RIGHT  &mkp MB4  &mkp MB5  &msc SCRL_DOWN  &msc SCRL_DOWN  &msc SCRL_DOWN  &kp RCTRL       &mo 2           &mo 3
-&trans       &trans            &trans            &trans             &msc SCRL_UP      &msc SCRL_DOWN   &mkp LCLK &mkp RCLK &mkp MCLK       &msc SCRL_DOWN  &trans          &trans          &trans          &trans
+&to 0        &kp C_AC_ZOOM_OUT &kp C_AC_ZOOM_IN  &kp C_AC_REFRESH   &kp LC(F5)        &kp F5                           &kp PG_UP       &kp PG_UP       &kp PG_UP       &kp C_VOL_UP    &kp C_VOL_DN    &to 0
+&kp LC(T)    &kp LC(W)         &kp LC(LS(T))     &kp LC(R)          &kp LC(L)         &kp LC(K)                        &kp HOME        &kp UP          &kp PG_DN       &kp END         &kp LC(F)       &kp DEL
+&kp LCTRL    &kp LGUI          &kp LALT          &kp LSHFT          &kp LC(A)         &kp LC(E)        &kp RET   &kp SPACE &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp RALT        &kp RGUI
+&tog 4       &kp LC(MINUS)     &kp LC(EQUAL)     &kp LC(N0)         &kp LS(HOME)      &kp LS(END)      &kp TAB   &kp LS(TAB) &kp PG_DN     &kp PG_DN       &kp LC(F4)      &kp RCTRL       &mo 2           &mo 3
+&trans       &trans            &trans            &trans             &kp LC(A)         &kp LC(E)        &kp RET   &kp SPACE &kp DEL         &kp BSPC        &trans          &trans          &trans          &trans
             >;
         };
     };
