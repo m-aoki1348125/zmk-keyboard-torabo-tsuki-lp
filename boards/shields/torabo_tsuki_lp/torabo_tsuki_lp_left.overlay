@@ -1,13 +1,1 @@
 #include "torabo_tsuki_lp.dtsi"
-#include <zephyr/dt-bindings/input/input-event-codes.h>
-
-/ {
-    trackball_transform: trackball_transform {
-        compatible = "zmk,input-processor-transform";
-        #input-processor-cells = <0>;
-        type = <INPUT_EV_REL>;
-        codes = <INPUT_REL_X INPUT_REL_Y>;
-        x-invert;
-        y-invert;
-    };
-};
