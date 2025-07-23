@@ -1,15 +1,15 @@
-# Auto Mouse Layer Implementation
+# Enhanced Mouse Layer Implementation
 
 ## Overview
 
-This implementation adds an **Auto Mouse Layer** feature to the torabo-tsuki-lp keyboard. When you move the trackball, the keyboard automatically switches to a dedicated mouse layer with optimized bindings for mouse operations, then returns to the default layer after a timeout period.
+This implementation enhances the torabo-tsuki-lp keyboard with comprehensive mouse functionality. The keyboard includes a dedicated mouse layer (Layer 1) with optimized bindings for mouse operations, and a scroll-specialized layer (Layer 4) for intensive document navigation.
 
 ## Features
 
-### 🎯 Auto-Activation
-- **Automatic layer switching**: Trackball movement triggers instant layer change
-- **Smart timeout**: Returns to default layer after 1 second of inactivity
-- **Idle detection**: Requires 50ms of prior idle time before activation
+### 🖱️ Enhanced Mouse Support
+- **Dedicated mouse layer**: Layer 1 optimized for mouse operations
+- **Comprehensive controls**: Mouse clicks, scrolling, and navigation
+- **Manual activation**: Toggle or momentary layer access
 
 ### 🖱️ Comprehensive Mouse Layer (Layer 1)
 The mouse layer includes optimized bindings for efficient mouse operations:
@@ -100,21 +100,6 @@ Advanced tap-dance and macro behaviors:
 ```conf
 # Mouse functionality
 CONFIG_ZMK_MOUSE=y
-CONFIG_ZMK_MOUSE_SMOOTH_SCROLLING=y
-
-# Input processing
-CONFIG_ZMK_INPUT=y
-CONFIG_ZMK_INPUT_PROCESSOR_AUTO_ENABLE=y
-```
-
-### Auto-Layer Processor
-```dts
-trackball_auto_mouse_layer: trackball_auto_mouse_layer {
-    compatible = "zmk,input-processor-auto-layer";
-    layer = <1>;                    // Target mouse layer
-    timeout-ms = <1200>;            // 1.2 second timeout (optimized)
-    require-prior-idle-ms = <100>;  // 100ms idle requirement (refined)
-};
 ```
 
 ### Trackball Configuration
@@ -139,35 +124,37 @@ trackball: trackball@0 {
 ## Usage Guide
 
 ### Basic Usage
-1. **Move the trackball** → Automatically switches to mouse layer (Layer 1)
-2. **Perform mouse operations** using the optimized key layout  
-3. **Stop moving** for 1.2 seconds → Returns to default layer
-4. **Manual toggle** available via combo (keys 25+26) or `&tog 1`
+1. **Activate mouse layer** → Use combo (keys 25+26) or `&tog 1` to switch to Layer 1
+2. **Perform mouse operations** using the optimized key layout with trackball
+3. **Return to default** → Press escape (top-left) or toggle off the layer
+4. **Trackball support** → Use trackball for cursor movement in any layer
 
 ### Advanced Multi-Layer Usage
 1. **Access scroll layer** from mouse layer → Press top-right key (`&to 4`) or thumb key (`&mo 4`)
 2. **Intensive scrolling** in scroll layer → Optimized for document navigation and web browsing
-3. **Layer switching combos** → Quick access between layers without manual key presses:
+3. **Layer switching combos** → Quick access between layers:
+   - Keys 25+26: Toggle mouse layer from default layer
    - Keys 24+25: Toggle scroll layer from any layer
    - Keys 30+31: Direct switch from mouse to scroll layer  
-4. **Persistent modes** → Use `&tog 4` to stay in scroll layer for extended operations
+4. **Persistent modes** → Use `&tog 1` for mouse layer or `&tog 4` for scroll layer
 
 ### Pro Tips
-- **Quick edits**: Use combos for instant copy/paste without thinking about layers
-- **Smooth workflow**: The 100ms idle requirement prevents accidental layer switches during typing
+- **Quick edits**: Use combos for instant copy/paste operations in mouse layer
+- **Smooth workflow**: Toggle layers as needed for different tasks
 - **Persistent modes**: Use `&tog 1` for mouse layer or `&tog 4` for scroll layer during extended work
 - **Emergency exit**: Press escape (top-left) in any layer to immediately return to default layer
 - **Scroll optimization**: Use scroll layer for document reading, web browsing, or code navigation
-- **Layer chaining**: Flow seamlessly from auto mouse layer → manual scroll layer → back to default
+- **Layer chaining**: Flow seamlessly between mouse layer → scroll layer → back to default
 - **Browser mastery**: Scroll layer includes tab management, zoom controls, and navigation shortcuts
-- **Combo efficiency**: Master the layer switching combos (24+25, 30+31) for fastest workflow
+- **Combo efficiency**: Master the layer switching combos (25+26, 24+25, 30+31) for fastest workflow
+- **Trackball anywhere**: Trackball works for cursor movement in any layer, not just mouse layer
 
 ### Customization
-You can adjust the following parameters in the devicetree:
-- `timeout-ms`: How long to wait before returning to default layer (currently 1200ms / 1.2s)
-- `require-prior-idle-ms`: Minimum idle time before auto-activation (currently 100ms)
-- `layer`: Which layer to activate (currently set to layer 1 for mouse operations)
-- Layer assignments: Modify layer numbers for mouse (1) and scroll (4) layers as needed
+You can customize the following aspects:
+- **Layer assignments**: Modify layer numbers for mouse (1) and scroll (4) layers in keymap
+- **Key bindings**: Adjust mouse and scroll operations in respective layers
+- **Combo positions**: Modify key positions for layer switching combos
+- **Toggle vs momentary**: Change between `&tog` and `&mo` for different layer access patterns
 
 ## Trackball Orientation
 The trackball uses default orientation as configured by the PAW3222 driver. If movement direction feels incorrect, axis inversion can be handled through software mapping or physical trackball ball placement adjustment.

@@ -90,15 +90,6 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&trackball_auto_mouse_layer>;
-    };
-
-    // Auto mouse layer processor with enhanced configuration
-    trackball_auto_mouse_layer: trackball_auto_mouse_layer {
-        compatible = "zmk,input-processor-auto-layer";
-        layer = <1>;
-        timeout-ms = <1200>;
-        require-prior-idle-ms = <100>;
     };
 
     vbatt: vbatt {
