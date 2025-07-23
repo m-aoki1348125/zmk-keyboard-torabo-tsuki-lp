@@ -79,14 +79,14 @@
     behaviors {
         mouse_tp: mouse_tap {
             compatible = "zmk,behavior-tap-dance";
-            #tap-dance-cells = <0>;
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mkp LCLK>, <&mkp LCLK>, <&mkp LCLK>;
         };
 
         scroll_tp: scroll_tap {
             compatible = "zmk,behavior-tap-dance";
-            #tap-dance-cells = <0>;
+            #binding-cells = <0>;
             tapping-term-ms = <150>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_UP>, <&msc SCRL_UP>;
         };
