@@ -90,6 +90,17 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        xy-swap;
+        x-invert;
+        y-invert;
+        input-processors = <&trackball_auto_mouse_layer>;
+    };
+
+    trackball_auto_mouse_layer: trackball_auto_mouse_layer {
+        compatible = "zmk,input-processor-auto-layer";
+        layer = <1>;
+        timeout-ms = <1000>;
+        require-prior-idle-ms = <50>;
     };
 
     vbatt: vbatt {
