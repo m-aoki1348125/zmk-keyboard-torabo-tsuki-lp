@@ -46,6 +46,33 @@
             key-positions = <25 26>;
             layers = <0 2 3>;
         };
+
+        // Quick layer switch to scroll layer
+        scroll_layer_toggle {
+            bindings = <&tog 4>;
+            key-positions = <24 25>;
+            layers = <0 1 2 3>;
+        };
+
+        // Switch from mouse layer to scroll layer
+        mouse_to_scroll {
+            bindings = <&to 4>;
+            key-positions = <30 31>;
+            layers = <1>;
+        };
+
+        // Enhanced scroll operations in scroll layer
+        fast_scroll_up {
+            bindings = <&scroll_tp>;
+            key-positions = <18 19>;
+            layers = <4>;
+        };
+
+        precision_zoom {
+            bindings = <&kp LC(N0)>;
+            key-positions = <16 17>;
+            layers = <4>;
+        };
     };
 
     // Custom behaviors for advanced mouse functionality
@@ -97,11 +124,11 @@
 
         mouse_layer {
             bindings = <
-&to 0      &kp K_BACK    &kp K_FORWARD &kp C_AC_REFRESH &kp C_AC_ZOOM_IN &kp C_AC_ZOOM_OUT                       &msc SCRL_UP   &msc SCRL_UP   &msc SCRL_UP   &kp C_VOL_UP   &kp C_VOL_DN  &kp C_MUTE
+&to 0      &kp K_BACK    &kp K_FORWARD &kp C_AC_REFRESH &kp C_AC_ZOOM_IN &kp C_AC_ZOOM_OUT                       &msc SCRL_UP   &msc SCRL_UP   &msc SCRL_UP   &kp C_VOL_UP   &kp C_VOL_DN  &to 4
 &kp TAB    &kp LC(Z)     &kp LC(X)     &kp LC(C)        &kp LC(V)        &kp LC(Y)                               &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP   &msc SCRL_RIGHT &kp K_APP    &kp DEL
 &kp LCTRL  &kp LGUI      &kp LALT      &kp LSHFT        &mkp LCLK        &mkp RCLK        &mkp LCLK    &mkp RCLK  &mkp LCLK      &mkp RCLK      &mkp MCLK      &kp RSHFT      &kp RALT     &kp RGUI
 &tog 1     &kp LC(LA(Z)) &kp LC(LA(X)) &kp LC(LA(C))    &kp LC(LA(V))    &kp LC(LA(Y))    &mkp MB4     &mkp MB5   &msc SCRL_DOWN &msc SCRL_DOWN &msc SCRL_DOWN &kp RCTRL      &mo 2        &mo 3
-&trans     &trans        &trans        &trans           &mkp LCLK        &mkp RCLK        &mkp LCLK    &mkp RCLK  &mkp MCLK      &mkp RCLK      &trans         &trans         &trans       &trans
+&trans     &trans        &trans        &trans           &mkp LCLK        &mkp RCLK        &mkp LCLK    &mkp RCLK  &mkp MCLK      &mkp RCLK      &trans         &mo 4          &trans       &trans
             >;
         };
 
@@ -122,6 +149,16 @@
 &trans  &kp F6   &kp F7   &kp F8        &kp F9        &kp F10     &trans  &trans  &kp LEFT          &kp DOWN   &kp UP_ARROW   &kp RIGHT  &kp TAB     &trans
 &trans  &kp F11  &kp F12  &out OUT_USB  &out OUT_BLE  &bt BT_NXT  &trans  &trans  &kp SINGLE_QUOTE  &kp DQT    &kp GRAVE      &kp TILDE  &kp PIPE    &trans
 &trans  &trans   &trans   &trans        &kp DELETE    &kp TAB     &trans  &trans  &trans            &trans     &trans         &trans     &trans      &trans
+            >;
+        };
+
+        scroll_layer {
+            bindings = <
+&to 0        &kp C_AC_ZOOM_OUT &kp C_AC_ZOOM_IN  &kp C_AC_REFRESH   &kp LC(F5)        &kp F5                           &msc SCRL_UP    &msc SCRL_UP    &msc SCRL_UP    &msc SCRL_UP    &msc SCRL_UP    &to 0
+&kp LC(T)    &kp LC(W)         &kp LC(LS(T))     &kp LC(R)          &kp LC(L)         &kp LC(K)                        &msc SCRL_LEFT  &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_RIGHT &msc SCRL_RIGHT &kp LC(F)
+&kp LCTRL    &kp LGUI          &kp LALT          &kp LSHFT          &msc SCRL_UP      &msc SCRL_DOWN   &mkp LCLK &mkp RCLK &msc SCRL_UP    &msc SCRL_DOWN  &mkp MCLK       &kp RSHFT       &kp RALT        &kp RGUI
+&tog 4       &kp LC(MINUS)     &kp LC(EQUAL)     &kp LC(N0)         &msc SCRL_LEFT    &msc SCRL_RIGHT  &mkp MB4  &mkp MB5  &msc SCRL_DOWN  &msc SCRL_DOWN  &msc SCRL_DOWN  &kp RCTRL       &mo 2           &mo 3
+&trans       &trans            &trans            &trans             &msc SCRL_UP      &msc SCRL_DOWN   &mkp LCLK &mkp RCLK &mkp MCLK       &msc SCRL_DOWN  &trans          &trans          &trans          &trans
             >;
         };
     };
