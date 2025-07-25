@@ -95,6 +95,7 @@
         input_split_dev: input_split_dev@0 {
             compatible = "zmk,input-split";
             reg = <0>;
+            device = <&trackball>;
         };
     };
 

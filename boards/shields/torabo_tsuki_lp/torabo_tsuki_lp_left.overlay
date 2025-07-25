@@ -1,9 +1,5 @@
 #include "torabo_tsuki_lp.dtsi"
 
-&input_split_dev {
-    device = <&trackball>;
-};
-
 &trackball_listener {
     status = "okay";
 };
