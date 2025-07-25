@@ -88,20 +88,26 @@
         compatible = "zmk,cdc-acm-bootloader-trigger";
     };
 
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+        
+        input_split_dev: input_split_dev@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-        device = <&trackball>;
+        status = "disabled";
+        device = <&input_split_dev>;
         input-processors = <&zip_xy_transform 0x00>, <&zip_temp_layer 1 2000>;
         
         scroll_mode {
             layers = <2>;
             input-processors = <&trackball_scroll_mapper>;
         };
-    };
-
-    input_split_dev: input_split_dev {
-        compatible = "zmk,input-split";
-        device = <&trackball>;
     };
 
     vbatt: vbatt {
