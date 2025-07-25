@@ -16,15 +16,6 @@ config INPUT
 config ZMK_POINTING
     default y
 
-config ZMK_INPUT_LISTENER
-    default y
-
-config ZMK_INPUT_PROCESSOR_TEMP_LAYER
-    default y
-
-config ZMK_INPUT_SPLIT
-    default y
-
 config PAW3222
     default y
  
