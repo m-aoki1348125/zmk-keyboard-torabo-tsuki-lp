@@ -49,7 +49,7 @@
         // Test: Simple mouse layer toggle
 
         mouse_layer_toggle {
-            bindings = <&tog 0>;
+            bindings = <&tog 1>;
             key-positions = <25 26>;
             layers = <0>;
         };
@@ -57,7 +57,7 @@
         // Test: Direct mouse layer access
 
         mouse_layer_direct {
-            bindings = <&to 0>;
+            bindings = <&to 1>;
             key-positions = <26 27>;
             layers = <0>;
         };
@@ -65,7 +65,7 @@
         // Direct scroll layer access
 
         scroll_layer_direct {
-            bindings = <&to 0>;
+            bindings = <&to 2>;
             key-positions = <24 25>;
             layers = <0>;
         };
@@ -73,7 +73,7 @@
         // Quick layer switch to scroll layer
 
         scroll_layer_toggle {
-            bindings = <&tog 0>;
+            bindings = <&tog 2>;
             key-positions = <32 33>;
             layers = <0>;
         };
@@ -81,7 +81,7 @@
         // Switch from mouse layer to scroll layer
 
         mouse_to_scroll {
-            bindings = <&to 0>;
+            bindings = <&to 2>;
             key-positions = <30 31>;
         };
 
