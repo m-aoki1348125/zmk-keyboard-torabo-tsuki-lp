@@ -1,5 +1,1 @@
 #include "torabo_tsuki_lp.dtsi"
-
-&trackball_listener {
-    status = "okay";
-};

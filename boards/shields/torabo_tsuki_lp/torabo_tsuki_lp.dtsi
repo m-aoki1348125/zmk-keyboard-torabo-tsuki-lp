@@ -88,21 +88,9 @@
         compatible = "zmk,cdc-acm-bootloader-trigger";
     };
 
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-        
-        input_split_dev: input_split_dev@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-            device = <&trackball>;
-        };
-    };
-
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&input_split_dev>;
+        device = <&trackball>;
         input-processors = <&zip_xy_transform 0x00>, <&zip_temp_layer 1 2000>;
         
         scroll_mode {
