@@ -9,6 +9,14 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    trackball_scroll_scaler: trackball_scroll_scaler {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <0>;
+        x-multiplier = <1>;
+        y-multiplier = <1>;
+        scale-divisor = <8>;
+    };
+
     trackball_scroll_mapper: trackball_scroll_mapper {
         compatible = "zmk,input-processor-code-mapper";
         #input-processor-cells = <0>;
