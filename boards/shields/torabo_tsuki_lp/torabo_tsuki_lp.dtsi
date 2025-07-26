@@ -95,7 +95,7 @@
         
         scroll_mode {
             layers = <2>;
-            input-processors = <&trackball_scroll_transform>, <&trackball_scroll_mapper>;
+            input-processors = <&trackball_scroll_mapper>;
         };
     };
 
@@ -164,6 +164,8 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 19 GPIO_ACTIVE_LOW>;
         power-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H1)>;
+        resolution = <400>;
+        scale-factor = <1>;
         
         pointing-smooth {
             enabled = <1>;
