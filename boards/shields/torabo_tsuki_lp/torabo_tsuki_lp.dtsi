@@ -164,14 +164,13 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 19 GPIO_ACTIVE_LOW>;
         power-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H1)>;
-        resolution = <400>;
-        scale-factor = <1>;
         
         pointing-smooth {
             enabled = <1>;
             filter = "ema";
             alpha = <15>;
             fps = <120>;
+            scale = <4>;
         };
     };
 };
