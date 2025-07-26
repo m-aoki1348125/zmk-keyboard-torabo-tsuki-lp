@@ -172,11 +172,11 @@
 
         num {
             bindings = <
-&none  &none               &none               &none             &none                &none                           &none      &none   &none   &none   &none                 &none
-&none  &mo 6               &kp W               &kp UP_ARROW      &kp R                &kp T                           &kp ASTRK  &kp N7  &kp N8  &kp N9  &kp PLUS              &none
-&none  &kp HOME            &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW      &kp END  &none       &none      &kp COLON  &kp N4  &kp N5  &kp N6  &kp MINUS             &none
-&none  &kp LG(DOWN_ARROW)  &kp LG(LEFT_ARROW)  &kp LG(UP_ARROW)  &kp LG(RIGHT_ARROW)  &kp B    &kp ESCAPE  &kp EQUAL  &kp N0     &kp N1  &kp N2  &kp N3  &mt RIGHT_SHIFT FSLH  &none
-&none  &trans              &trans              &none             &none                &trans   &trans      &trans     &trans     &trans  &trans  &trans  &trans                &none
+&none  &none               &none               &none             &none                &none                       &none      &none   &none   &none   &none                 &none
+&none  &mo 6               &kp W               &kp UP_ARROW      &kp R                &kp T                       &kp ASTRK  &kp N7  &kp N8  &kp N9  &kp PLUS              &none
+&none  &kp HOME            &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW      &kp END  &none   &none      &kp COLON  &kp N4  &kp N5  &kp N6  &kp MINUS             &none
+&none  &kp LG(DOWN_ARROW)  &kp LG(LEFT_ARROW)  &kp LG(UP_ARROW)  &kp LG(RIGHT_ARROW)  &kp B    &trans  &kp EQUAL  &kp N0     &kp N1  &kp N2  &kp N3  &mt RIGHT_SHIFT FSLH  &none
+&none  &trans              &trans              &none             &none                &trans   &trans  &trans     &trans     &trans  &trans  &trans  &trans                &none
             >;
         };
 
