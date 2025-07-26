@@ -88,8 +88,13 @@
         // Enhanced scroll operations in scroll layer
 
         fast_scroll_up {
-            bindings = <&scroll_tp>;
+            bindings = <&fine_scroll_up>;
             key-positions = <18 19>;
+        };
+
+        fast_scroll_down {
+            bindings = <&fine_scroll_down>;
+            key-positions = <19 20>;
         };
 
         precision_zoom {
@@ -135,6 +140,37 @@
     };
 
     macros {
+        fine_scroll_up: fine_scroll_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&msc SCRL_UP &msc SCRL_UP &msc SCRL_UP>;
+        };
+        
+        fine_scroll_down: fine_scroll_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&msc SCRL_DOWN &msc SCRL_DOWN &msc SCRL_DOWN>;
+        };
+        
+        fine_scroll_left: fine_scroll_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&msc SCRL_LEFT &msc SCRL_LEFT &msc SCRL_LEFT>;
+        };
+        
+        fine_scroll_right: fine_scroll_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&msc SCRL_RIGHT &msc SCRL_RIGHT &msc SCRL_RIGHT>;
+        };
     };
 
     keymap {
@@ -162,11 +198,11 @@
 
         scroll {
             bindings = <
-&none  &none   &none   &none  &none  &none                   &none   &none   &none   &none   &none   &none
-&none  &kp Q   &kp W   &kp E  &kp R  &kp T                   &kp Y   &kp U   &kp I   &kp O   &kp P   &none
-&none  &trans  &kp S   &kp D  &kp F  &kp G   &none   &none   &kp H   &kp J   &kp K   &kp L   &trans  &none
-&none  &trans  &kp X   &kp C  &kp V  &kp B   &trans  &trans  &kp N   &kp M   &trans  &trans  &trans  &none
-&none  &trans  &trans  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none
+&none  &none          &none             &none              &none               &none                   &none               &none              &none             &none          &none   &none
+&none  &kp Q          &fine_scroll_up   &kp E              &kp R               &kp T                   &kp Y               &kp U              &kp I             &kp O          &kp P   &none
+&none  &fine_scroll_left  &kp S         &fine_scroll_down  &fine_scroll_right  &kp G   &none   &none   &kp H               &kp J              &kp K             &kp L          &trans  &none
+&none  &trans         &kp X             &kp C              &kp V               &kp B   &trans  &trans  &kp N               &kp M              &trans            &trans         &trans  &none
+&none  &trans         &trans            &none              &none               &trans  &trans  &trans  &trans              &trans             &trans            &trans         &trans  &none
             >;
         };
 
