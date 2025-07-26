@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
+    - name: nuovotaka
+      url-base: https://github.com/nuovotaka
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -15,8 +17,8 @@ manifest:
     - name: zmk-feature-status-led
       remote: sekigon-gonnoc
       revision: main
-    - name: zmk-driver-paw3222
-      remote: sekigon-gonnoc
+    - name: zmk-driver-paw3222-alpha
+      remote: nuovotaka
       revision: main
     - name: zmk-feature-cdc-acm-bootloader-trigger
       remote: sekigon-gonnoc

@@ -9,22 +9,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    trackball_fine_transform: trackball_fine_transform {
-        compatible = "zmk,input-processor-transform";
-        #input-processor-cells = <0>;
-        type = <INPUT_EV_REL>;
-        x-scale = <1>;
-        y-scale = <1>;
-        x-divisor = <4>;
-        y-divisor = <4>;
-    };
-
-    trackball_scroll_mapper: trackball_scroll_mapper {
-        compatible = "zmk,input-processor-code-mapper";
-        #input-processor-cells = <0>;
-        type = <INPUT_EV_REL>;
-        map = <INPUT_REL_X INPUT_REL_HWHEEL>, <INPUT_REL_Y INPUT_REL_WHEEL>;
-    };
 
     combos {
         compatible = "zmk,combos";

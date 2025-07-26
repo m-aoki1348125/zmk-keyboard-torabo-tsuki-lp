@@ -91,12 +91,7 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_xy_transform 0x06>, <&zip_temp_layer 1 3000>;
-        
-        scroll_mode {
-            layers = <2>;
-            input-processors = <&trackball_fine_transform>, <&trackball_scroll_mapper>;
-        };
+        input-processors = <&zip_xy_transform 0x06>;
     };
 
     vbatt: vbatt {
@@ -164,5 +159,13 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 19 GPIO_ACTIVE_LOW>;
         power-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H1)>;
+        
+        // PAW3222-Alpha advanced configuration
+        rotation = <0>;
+        res-cpi = <1200>;
+        scroll-tick = <4>;
+        scroll-layers = <2>;
+        snipe-layers = <>;
+        force-awake;
     };
 };
