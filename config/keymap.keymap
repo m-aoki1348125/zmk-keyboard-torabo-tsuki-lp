@@ -9,13 +9,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    trackball_scroll_mapper: trackball_scroll_mapper {
-        compatible = "zmk,input-processor-code-mapper";
-        #input-processor-cells = <0>;
-        type = <INPUT_EV_REL>;
-        map = <INPUT_REL_X INPUT_REL_HWHEEL>, <INPUT_REL_Y INPUT_REL_WHEEL>;
-    };
-
     combos {
         compatible = "zmk,combos";
         timeout-ms = <50>;
@@ -155,7 +148,7 @@
             bindings = <
 &none  &none      &none                    &none     &none                     &none                            &none      &none      &none      &none      &none      &none
 &none  &lt 0 Q   &lt 0 LA(LEFT_ARROW)    &mkp MB3  &lt 0 LA(RIGHT_ARROW)    &lt 0 T                          &lt 0 Y    &lt 0 U    &lt 0 I    &lt 0 O    &lt 0 P    &none
-&none  &lt 0 A   &mo 2                    &mkp MB2  &mkp MB1                  &lt 0 G   &none           &none   &lt 0 H    &lt 0 J    &lt 0 K    &lt 0 L    &to 0      &none
+&none  &lt 0 A   &lt 0 S                &mkp MB2  &mkp MB1                  &lt 0 G   &none           &none   &lt 0 H    &lt 0 J    &lt 0 K    &lt 0 L    &to 0      &none
 &none  &lt 0 Z   &lt 0 X                &lt 0 C &lt 0 V                &lt 0 B   &to 0           &to 0   &lt 0 N    &lt 0 M    &to 0      &to 0      &to 0      &none
 &none  &trans    &trans                   &none     &none                     &trans   &trans          &trans  &trans     &trans     &trans     &trans     &trans     &none
             >;
