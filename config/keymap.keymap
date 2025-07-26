@@ -24,7 +24,7 @@
 
         bt_clear {
             bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
+            key-positions = <13 44>;
         };
 
         // Mouse layer combos for quick actions
@@ -36,24 +36,24 @@
 
         mouse_paste {
             bindings = <&kp LC(V)>;
-            key-positions = <28 29>;
+            key-positions = <42 41>;
         };
 
         mouse_undo {
             bindings = <&kp LC(Z)>;
-            key-positions = <26 27>;
+            key-positions = <41 40>;
         };
 
         mouse_redo {
             bindings = <&kp LC(Y)>;
-            key-positions = <29 30>;
+            key-positions = <26 27>;
         };
 
         // Test: Simple mouse layer toggle
 
         mouse_layer_toggle {
             bindings = <&tog 1>;
-            key-positions = <25 26>;
+            key-positions = <0 1>;
             layers = <0>;
         };
 
@@ -61,7 +61,7 @@
 
         mouse_layer_direct {
             bindings = <&to 1>;
-            key-positions = <26 27>;
+            key-positions = <2 3>;
             layers = <0>;
         };
 
@@ -69,10 +69,9 @@
 
         scroll_layer_direct {
             bindings = <&to 2>;
-            key-positions = <24 25>;
+            key-positions = <2 1>;
             layers = <0>;
         };
-
 
         // Switch from mouse layer to scroll layer
 
@@ -83,7 +82,27 @@
 
         precision_zoom {
             bindings = <&kp LC(N0)>;
-            key-positions = <16 17>;
+            key-positions = <4 5>;
+        };
+
+        all {
+            bindings = <&kp LC(A)>;
+            key-positions = <15 16>;
+        };
+
+        bac {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <36 35>;
+        };
+
+        dell {
+            bindings = <&kp DELETE>;
+            key-positions = <22 21>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <25 26>;
         };
     };
 
@@ -96,7 +115,6 @@
             tapping-term-ms = <200>;
             bindings = <&mkp LCLK>, <&mkp LCLK>, <&mkp LCLK>;
         };
-
 
         // DPI adjustment behavior (using output selection as example)
 
@@ -145,11 +163,11 @@
 
         scroll {
             bindings = <
-&none  &none   &none   &none  &none  &none                   &none   &none   &none   &none   &none   &none
-&none  &to 0   &trans  &trans &trans &trans                  &trans  &trans  &trans  &trans  &to 0   &none
-&none  &trans  &trans  &trans &trans &trans  &none   &none   &trans  &trans  &trans  &trans  &to 0   &none
-&none  &to 0   &trans  &trans &trans &trans  &to 0   &to 0   &trans  &trans  &trans  &trans  &to 0   &none
-&none  &trans  &trans  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none
+&none  &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none   &none
+&none  &to 0   &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &to 0   &none
+&none  &trans  &trans  &trans  &trans  &trans  &none   &none   &trans  &trans  &trans  &trans  &to 0   &none
+&none  &to 0   &trans  &trans  &trans  &trans  &to 0   &to 0   &trans  &trans  &trans  &trans  &to 0   &none
+&none  &trans  &trans  &none   &none   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none
             >;
         };
 
