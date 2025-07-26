@@ -11,7 +11,7 @@
 / {
     trackball_scroll_scaler: trackball_scroll_scaler {
         compatible = "zmk,input-processor-scaler";
-        #input-processor-cells = <0>;
+        #input-processor-cells = <2>;
         x-multiplier = <1>;
         y-multiplier = <1>;
         scale-divisor = <8>;
