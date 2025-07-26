@@ -182,11 +182,11 @@
 
         symbol {
             bindings = <
-&none  &none              &none                 &none                 &none                  &none                      &none        &none       &none       &none       &none                             &none
-&none  &kp GRAVE          &kp CARET             &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE                   &kp PIPE     &kp RS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)                        &none
-&none  &kp DOUBLE_QUOTES  &kp TILDE             &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp COLON  &none   &none   &kp COLON    &kp RS(N4)  &kp RS(N5)  &kp RS(N6)  &kp TILDE                         &none
-&none  &kp SINGLE_QUOTE   &kp NON_US_BACKSLASH  &kp LBKT              &kp RBKT               &kp SEMI   &trans  &trans  &kp AT_SIGN  &kp RS(N1)  &kp RS(N2)  &kp RS(N3)  &mt RIGHT_SHIFT NON_US_BACKSLASH  &none
-&none  &trans             &trans                &none                 &none                  &trans     &trans  &trans  &trans       &trans      &trans      &trans      &trans                            &none
+&none  &none              &none                 &none                 &none                  &none                          &none      &none       &none       &none       &none                             &none
+&none  &kp GRAVE          &kp CARET             &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp AMPERSAND                  &kp PIPE   &kp RS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)                        &none
+&none  &kp DOUBLE_QUOTES  &kp TILDE             &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp HASH       &none   &none   &kp COLON  &kp RS(N4)  &kp RS(N5)  &kp RS(N6)  &kp TILDE                         &none
+&none  &kp SINGLE_QUOTE   &kp NON_US_BACKSLASH  &kp LBKT              &kp RBKT               &kp AT         &trans  &trans  &kp SEMI   &kp RS(N1)  &kp RS(N2)  &kp RS(N3)  &mt RIGHT_SHIFT NON_US_BACKSLASH  &none
+&none  &trans             &trans                &none                 &none                  &trans         &trans  &trans  &trans     &trans      &trans      &trans      &trans                            &none
             >;
         };
 
