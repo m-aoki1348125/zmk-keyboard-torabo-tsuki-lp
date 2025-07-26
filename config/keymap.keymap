@@ -135,11 +135,11 @@
 
         mouse {
             bindings = <
-&none  &none   &none               &none     &none                &none                   &none   &none   &none   &none   &none   &none
-&none  &trans  &kp LA(LEFT_ARROW)  &mkp MB3  &kp LA(RIGHT_ARROW)  &trans                  &kp Y   &kp U   &kp I   &kp O   &kp P   &none
-&none  &trans  &mo 2               &mkp MB2  &mkp MB1             &trans  &none   &none   &kp H   &kp J   &kp K   &kp L   &trans  &none
-&none  &trans  &trans              &trans    &trans               &trans  &to 0   &trans  &kp N   &kp M   &trans  &trans  &trans  &none
-&none  &trans  &trans              &none     &none                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &none
+&none  &none      &none                    &none     &none                     &none                            &none      &none      &none      &none      &none      &none
+&none  &lt 0 Q   &lt 0 LA(LEFT_ARROW)    &mkp MB3  &lt 0 LA(RIGHT_ARROW)    &lt 0 T                          &lt 0 Y    &lt 0 U    &lt 0 I    &lt 0 O    &lt 0 P    &none
+&none  &lt 0 A   &mo 2                    &mkp MB2  &mkp MB1                  &lt 0 G   &none           &none   &lt 0 H    &lt 0 J    &lt 0 K    &lt 0 L    &to 0      &none
+&none  &lt 0 Z   &lt 0 X                &lt 0 C &lt 0 V                &lt 0 B   &to 0           &to 0   &lt 0 N    &lt 0 M    &to 0      &to 0      &to 0      &none
+&none  &trans    &trans                   &none     &none                     &trans   &trans          &trans  &trans     &trans     &trans     &trans     &trans     &none
             >;
         };
 
