@@ -95,7 +95,7 @@
         
         scroll_mode {
             layers = <2>;
-            input-processors = <&trackball_scroll_mapper>;
+            input-processors = <&trackball_fine_transform>, <&trackball_scroll_mapper>;
         };
     };
 
