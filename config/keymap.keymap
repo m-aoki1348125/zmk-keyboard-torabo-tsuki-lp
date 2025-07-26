@@ -14,8 +14,6 @@
         #input-processor-cells = <0>;
         type = <INPUT_EV_REL>;
         map = <INPUT_REL_X INPUT_REL_HWHEEL>, <INPUT_REL_Y INPUT_REL_WHEEL>;
-        scale-multiplier = <1>;
-        scale-divisor = <4>;
     };
 
     combos {
