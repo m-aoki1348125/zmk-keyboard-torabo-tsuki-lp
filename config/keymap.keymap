@@ -8,9 +8,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-&none {
-    #input-processor-cells = <0>;
-};
+&none { #input-processor-cells = <0>; };
 
 / {
     combos {
@@ -101,12 +99,21 @@
             bindings = <&kp TAB>;
             key-positions = <25 26>;
         };
+
+        ctlx {
+            bindings = <&kp RC(X)>;
+            key-positions = <39 40>;
+        };
+
+        shift-tab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <13 14>;
+        };
     };
 
     // Custom behaviors for advanced mouse functionality
 
     behaviors {
-
         mouse_tp: mouse_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -151,11 +158,11 @@
 
         mouse {
             bindings = <
-&none  &none      &none                    &none     &none                     &none                            &none      &none      &none      &none      &none      &none
-&none  &lt 0 Q   &lt 0 LA(LEFT_ARROW)    &mkp MB3  &lt 0 LA(RIGHT_ARROW)    &lt 0 T                          &lt 0 Y    &lt 0 U    &lt 0 I    &lt 0 O    &lt 0 P    &none
-&none  &lt 0 A   &lt 0 S                &mkp MB2  &mkp MB1                  &lt 0 G   &none           &none   &lt 0 H    &lt 0 J    &lt 0 K    &lt 0 L    &to 0      &none
-&none  &lt 0 Z   &lt 0 X                &lt 0 C &lt 0 V                &lt 0 B   &to 0           &to 0   &lt 0 N    &lt 0 M    &to 0      &to 0      &to 0      &none
-&none  &trans    &trans                   &none     &none                     &trans   &trans          &trans  &trans     &trans     &trans     &trans     &trans     &none
+&none  &none    &none                 &none     &none                  &none                    &none    &none    &none    &none    &none    &none
+&none  &lt 0 Q  &lt 0 LA(LEFT_ARROW)  &mkp MB3  &lt 0 LA(RIGHT_ARROW)  &lt 0 T                  &lt 0 Y  &lt 0 U  &lt 0 I  &lt 0 O  &lt 0 P  &none
+&none  &lt 0 A  &lt 0 S               &mkp MB2  &mkp MB1               &lt 0 G  &none   &none   &lt 0 H  &lt 0 J  &lt 0 K  &lt 0 L  &to 0    &none
+&none  &lt 0 Z  &lt 0 X               &lt 0 C   &lt 0 V                &lt 0 B  &to 0   &to 0   &lt 0 N  &lt 0 M  &to 0    &to 0    &to 0    &none
+&none  &trans   &trans                &none     &none                  &trans   &trans  &trans  &trans   &trans   &trans   &trans   &trans   &none
             >;
         };
 
