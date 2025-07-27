@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
+    - name: m-aoki1348125
+      url-base: https://github.com/m-aoki1348125
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -16,7 +18,7 @@ manifest:
       remote: sekigon-gonnoc
       revision: main
     - name: zmk-driver-paw3222
-      remote: sekigon-gonnoc
+      remote: m-aoki1348125
       revision: main
     - name: zmk-feature-cdc-acm-bootloader-trigger
       remote: sekigon-gonnoc
