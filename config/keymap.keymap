@@ -20,7 +20,7 @@
 
     trackball_scaler: trackball_scaler {
         compatible = "zmk,input-processor-scaler";
-        #input-processor-cells = <0>;
+        #input-processor-cells = <2>;
         scale-multiplier = <1>;
         scale-divisor = <3>;
     };
