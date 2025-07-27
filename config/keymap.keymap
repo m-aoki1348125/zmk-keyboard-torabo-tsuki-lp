@@ -10,7 +10,6 @@
 
 &none {
     #input-processor-cells = <0>;
-    track-remainders;
 };
 
 / {
