@@ -18,6 +18,13 @@
         map = <INPUT_REL_X INPUT_REL_HWHEEL>, <INPUT_REL_Y INPUT_REL_WHEEL>;
     };
 
+    trackball_scaler: trackball_scaler {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <0>;
+        scale-multiplier = <1>;
+        scale-divisor = <3>;
+    };
+
     combos {
         compatible = "zmk,combos";
         timeout-ms = <50>;
