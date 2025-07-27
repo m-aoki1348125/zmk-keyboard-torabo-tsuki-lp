@@ -21,6 +21,7 @@
     trackball_scaler: trackball_scaler {
         compatible = "zmk,input-processor-scaler";
         #input-processor-cells = <2>;
+        type = <INPUT_EV_REL>;
     };
 
     combos {
