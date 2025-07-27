@@ -88,6 +88,11 @@
         compatible = "zmk,cdc-acm-bootloader-trigger";
     };
 
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors = <&zip_xy_transform 0x06>, <&zip_temp_layer 1 3000>;
+    };
 
     vbatt: vbatt {
         // Disable default battery monitoring
@@ -154,8 +159,5 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 19 GPIO_ACTIVE_LOW>;
         power-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H1)>;
-        movement-threshold-px = <8>;
-        automouse-layer = <1>;
-        movement-timeout-ms = <3000>;
     };
 };
