@@ -102,6 +102,13 @@
     // Custom behaviors for advanced mouse functionality
 
     behaviors {
+        // Override none behavior to add input-processor-cells for ZMK Studio compatibility
+        none: none_override {
+            compatible = "zmk,behavior-none";
+            #binding-cells = <0>;
+            #input-processor-cells = <0>;
+        };
+
         mouse_tp: mouse_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
